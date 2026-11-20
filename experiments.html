@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment Management | LabTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-roles="admin,researcher,laboratory_personnel,supervisor">
+
+<div class="sidebar">
+    <h2>LabTrack</h2>
+    <p class="sub">LAB MANAGEMENT</p>
+
+    <a href="index.html">Dashboard</a>
+    <a href="observations.html">Observations</a>
+<a href="equipment.html">Equipment</a>
+    <a href="materials.html">Materials</a>
+    <a href="reports.html">Reports</a>
+    <a href="activity.html">Activity History</a>
+    <div class="bottom">
+        <a href="settings.html">Settings</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</div>
+
+<div class="main">
+    <div class="topbar">
+        <div>
+            <h2>Experiment Management</h2>
+            <p>View and manage registered experiments.</p>
+        </div>
+        <button onclick="window.location.href='new-experiment.html'">
+            + New Experiment
+        </button>
+    </div>
+
+    <div class="section">
+        <input
+            type="search"
+            id="searchExperiment"
+            placeholder="Search experiments..."
+            style="width:100%; padding:13px; margin-bottom:20px;"
+        >
+
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Experiment</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="managementTable">
+                    <tr><td colspan="5">Loading experiments...</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p id="managementMessage"></p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

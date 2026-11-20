@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials Management | LabTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+	<body data-roles="admin,laboratory_personnel,supervisor">
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+        <h2>LabTrack</h2>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="experiments.html">Experiments</a>
+            <a href="observations.html">Observations</a>
+            <a href="equipment.html">Equipment</a>
+            <a href="materials.html" class="active">Materials</a>
+                <a href="reports.html">Reports</a>
+                <a href="settings.html">Settings</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Materials Management</h1>
+        <p>Register and manage laboratory materials and chemicals.</p>
+
+        <section class="auth-box">
+            <h2>Add New Material</h2>
+
+            <form id="materialForm">
+                <label>Material Name</label>
+                <input type="text" id="materialName"
+                    placeholder="e.g. Ethanol" required>
+
+                <label>Quantity</label>
+                <input type="number" id="materialQuantity"
+                    min="0" step="any" placeholder="Enter quantity" required>
+
+                <label>Unit</label>
+                <input type="text" id="materialUnit"
+                    placeholder="e.g. litres, grams, bottles" required>
+
+                <button type="submit">Add Material</button>
+                <p id="materialMessage"></p>
+            </form>
+        </section>
+
+        <section class="auth-box">
+            <h2>Registered Materials</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="materialsTable">
+                    <tr>
+                        <td colspan="4">Loading materials...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

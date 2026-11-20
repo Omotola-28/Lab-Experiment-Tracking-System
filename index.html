@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTrack Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-roles="admin,researcher,laboratory_personnel,supervisor">
+
+
+<div class="sidebar">
+    <h2>LabTrack</h2>
+    <p class="sub">LAB MANAGEMENT</p>
+
+    <a class="active" href="index.html">Dashboard</a>
+    <a href="experiments.html">Experiments</a>
+    <a href="pbservations.html">Observations</a>
+    <a href="equipment.html">Equipment</a>
+    <a href="materials.html">Materials</a>
+    <a href="reports.html">Reports</a>
+    <a href="users.html">User Management</a>
+<a href="activity.html">Activity History</a>
+    <div class="bottom">
+        
+        <a href="settings.html">Settings</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</div>
+<div class="main">
+    <div class="topbar">
+        <div>
+            <h2>Dashboard</h2>
+
+<div class="dashboard-charts">
+    <div class="chart-card">
+        <h3>Experiment Status Overview</h3>
+        <canvas id="statusChart"></canvas>
+    </div>
+
+    <div class="chart-card">
+        <h3>Laboratory Resources</h3>
+        <canvas id="resourceChart"></canvas>
+    </div>
+</div>
+
+            <p>Welcome back! Here's your laboratory overview.</p>
+        </div>
+        <button onclick="addExperiment()">+ New Experiment</button>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <p>Total Experiments</p>
+            <h1 id="total">0</h1>
+        </div>
+
+        <div class="card">
+            <p>Ongoing Experiments</p>
+            <h1>0</h1>
+        </div>
+
+        <div class="card">
+            <p>Completed Experiments</p>
+            <h1>0</h1>
+        </div>
+
+        <div class="card">
+            <p>Pending Review</p>
+            <h1>0</h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Recent Experiments</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Experiment</th>
+                    <th>Researcher</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="experimentTable">
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management | LabTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-roles="admin">
+
+<div class="dashboard-container">
+    <aside class="sidebar">
+        <h2>LabTrack</h2>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="experiments.html">Experiments</a>
+            <a href="observations.html">Observations</a>
+            <a href="equipment.html">Equipment</a>
+            <a href="materials.html">Materials</a>
+            <a href="reports.html">Reports</a>
+            <a href="users.html" class="active">User Management</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>User Management</h1>
+        <p>View registered users and manage their system roles.</p>
+
+        <section class="auth-box">
+            <h2>Registered Users</h2>
+            <input type="text" id="userSearch"
+                placeholder="Search by name or email">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTable">
+                    <tr><td colspan="4">Loading users...</td></tr>
+                </tbody>
+            </table>
+            <p id="usersMessage"></p>
+        </section>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

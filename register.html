@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTrack Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-box">
+        <h2>LabTrack</h2>
+        <h3>Create Account</h3>
+        <p>Register as a researcher</p>
+
+        <form id="registerForm">
+            <input type="text" id="fullName" placeholder="Full name" required>
+            <input type="email" id="email" placeholder="Email address" required>
+            <input type="password" id="password" placeholder="Password (minimum 6 characters)" minlength="6" required>
+            <button type="submit">Register</button>
+        </form>
+
+        <p id="message"></p>
+        <p>Already registered? <a href="login.html">Login</a></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+</body>
+</html>

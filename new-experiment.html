@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Experiment | LabTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-roles="admin,researcher">
+
+<div class="auth-box">
+    <h2>LabTrack</h2>
+    <h3>Register New Experiment</h3>
+    <p>Enter the experiment details below.</p>
+
+    <form id="experimentForm">
+        <input type="text" id="title"
+            placeholder="Experiment title" required>
+
+        <textarea id="description"
+            placeholder="Experiment description"
+            rows="4"></textarea>
+
+       
+<label for="startDate">Start Date</label>
+<input type="date" id="startDate" required>
+
+<label for="endDate">Expected End Date</label>
+<input type="date" id="endDate">
+
+<label for="status">Experiment Status</label>
+<select id="status">
+    <option value="ongoing">Ongoing</option>
+    <option value="pending">Pending</option>
+    <option value="completed">Completed</option>
+    <option value="cancelled">Cancelled</option>
+</select>
+
+
+        <button type="submit">Save Experiment</button>
+    </form>
+
+    <p id="experimentMessage"></p>
+    <p><a href="index.html">Back to Dashboard</a></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

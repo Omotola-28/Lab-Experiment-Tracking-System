@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment Activity | LabTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-roles="admin,researcher,laboratory_personnel,supervisor">
+
+<div class="dashboard-container">
+    <aside class="sidebar">
+        <h2>LabTrack</h2>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="experiments.html">Experiments</a>
+            <a href="observations.html">Observations</a>
+            <a href="equipment.html">Equipment</a>
+            <a href="materials.html">Materials</a>
+            <a href="reports.html">Reports</a>
+            <a href="activity.html" class="active">Activity History</a>
+            <a href="settings.html">Settings</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h1>Experiment Activity History</h1>
+        <p>Record and review experiment progress updates.</p>
+
+        <section class="auth-box">
+            <h2>Record an Update</h2>
+            <form id="activityForm">
+                <label>Select Experiment</label>
+                <select id="activityExperiment" required>
+                    <option value="">Loading experiments...</option>
+                </select>
+
+                <label>Update Details</label>
+                <textarea id="activityDetails"
+                    placeholder="Describe the progress or changes..."
+                    required></textarea>
+
+                <button type="submit">Save Update</button>
+                <p id="activityMessage"></p>
+            </form>
+        </section>
+
+        <section class="auth-box">
+            <h2>Recorded Activities</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Experiment</th>
+                        <th>Update Details</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="activityTable"></tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

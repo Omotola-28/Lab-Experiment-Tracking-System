@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observations | LabTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-roles="admin,researcher,laboratory_personnel,supervisor">
+
+<div class="sidebar">
+    <h2>LabTrack</h2>
+    <p class="sub">LAB MANAGEMENT</p>
+    <a href="index.html">Dashboard</a>
+    <a href="experiments.html">Experiments</a>
+    <a href="observations.html">Observations</a>
+    <a href="equipment.html">Equipment</a>
+    <a href="materials.html">Materials</a>
+    <a href="reports.html">Reports</a>
+    <div class="bottom">
+        <a href="activity.html">Activity History</a>
+        <a href="settings.html">Settings</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</div>
+
+<div class="main">
+    <div class="topbar">
+        <div>
+            <h2>Experiment Observations</h2>
+            <p>Record and manage laboratory findings.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Record New Observation</h3>
+
+        <form id="observationForm">
+            <label for="experimentSelect">Select Experiment</label>
+            <select id="experimentSelect" required>
+                <option value="">Loading experiments...</option>
+            </select>
+
+            <label for="observationText">Observation Details</label>
+            <textarea id="observationText"
+                rows="5"
+                placeholder="Enter your experiment findings..."
+                required></textarea>
+
+            <button type="submit">Save Observation</button>
+        </form>
+
+        <p id="observationMessage"></p>
+    </div>
+
+    <div class="section" style="margin-top:25px;">
+        <h3>Recorded Observations</h3>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Experiment</th>
+                        <th>Observation</th>
+                        <th>Date Recorded</th>
+                    </tr>
+                </thead>
+                <tbody id="observationsTable">
+                    <tr><td colspan="3">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
